@@ -1,0 +1,85 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.39.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           spacegame
+version:        0.1.0.0
+author:         Alexandre Hurel
+maintainer:     alexandre@hurel.info
+copyright:      2026 Alexandre Hurel
+license:        BSD-3-Clause
+build-type:     Simple
+
+library
+  exposed-modules:
+      Lib
+      Niveaux
+      GlossCoords
+  other-modules:
+      Paths_spacegame
+  autogen-modules:
+      Paths_spacegame
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , random
+  default-language: Haskell2010
+
+executable spacegame-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_spacegame
+  autogen-modules:
+      Paths_spacegame
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , random
+    , spacegame
+  default-language: Haskell2010
+
+executable spacegame-gloss
+  main-is: MainGloss.hs
+  other-modules:
+      GlossUI
+      Paths_spacegame
+  autogen-modules:
+      Paths_spacegame
+  hs-source-dirs:
+      app-gloss
+  ghc-options: -Wall -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , gloss
+    , gloss-juicy
+    , random
+    , spacegame
+  default-language: Haskell2010
+
+test-suite spacegame-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_spacegame
+  autogen-modules:
+      Paths_spacegame
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , hspec
+    , random
+    , spacegame
+  default-language: Haskell2010

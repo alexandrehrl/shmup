@@ -1,0 +1,11 @@
+snapshot:
+  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/24/35.yaml
+
+packages:
+- .
+
+allow-newer: true
+
+extra-deps:
+- gloss-1.13.2.2
+- gloss-juicy-0.2.3
